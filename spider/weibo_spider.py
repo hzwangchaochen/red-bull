@@ -52,11 +52,8 @@ class WeiboSpider(object):
                     res = self.pattern.findall(line)[0]
                     res = res.replace("<br />", "\n")
                     res = re.sub(r'</?\w+[^>]*>', '', res)
-                    print(res)
                     self.write_file.write(res + "\n\n")
                     break
-                    # time.sleep(0.5)
-
 
 if __name__ == '__main__':
     weibo_spider = WeiboSpider(6006394101)
